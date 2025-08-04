@@ -10,6 +10,13 @@ A Python application that provides a graphical interface for monitoring and logg
 - Configurable baud rate
 - Simple and intuitive GUI interface
 
+## Prerequisites
+
+1. Install Visual C++ Build Tools:
+   - Download from: [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
+   - During installation, select "Desktop development with C++"
+   - This is required for PyQt6 installation
+
 ## Installation
 
 ### 1. Create a Virtual Environment
@@ -29,10 +36,16 @@ source venv/bin/activate
 
 ```bash
 # Upgrade pip
-pip install --upgrade pip
+python -m pip install --upgrade pip
 
-# Install required packages
-pip install -r requirements.txt
+# Install packages one by one
+pip install pyserial
+pip install PyQt6
+```
+
+If you still encounter installation errors, try:
+```bash
+pip install --only-binary :all: PyQt6
 ```
 
 ## Usage
